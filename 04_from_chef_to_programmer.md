@@ -1,6 +1,6 @@
 ---
 title: From Chef to Programmer: Lessons From The Kitchen
-published: false
+published: true
 description: Some things I've learned in the trenches of professional kitchens.
 tags: #webdev, #productivity, #career, #culture
 cover_image: https://i.imgur.com/kjKKdVz.jpg
