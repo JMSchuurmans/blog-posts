@@ -1,8 +1,8 @@
 ---
-title:
+title: A Year Ago I Never Would Have Been Able To Do This, But I Just Built My First Web App. Here It Is! (And A Little About How I Did It)
 published: false
-description:
-tags:
+description: Just want to show you what I did!
+tags: #showdev #ruby #codenewbie #beginners
 cover_image:
 ---
 
@@ -12,7 +12,7 @@ It was almost a year ago when I created an `index.html` file in my Atom editor, 
 
 When I was trying to figure out what to build, I took to heart the wise words of [Ben Greenberg], who told me once to keep it simple, especially when building something for the first time. "Your goal is to learn" he said, "not impress. Besides, simple projects done well are impressive for someone at your level."
 
-Given that, I knew I only wanted my app to have a has_many/belongs_to relationship, nothing more. Two models, no join table, no problems. That meant that I would have a User model, and something that belongs_to the user. So I thought a wine journal would lend itself perfectly to this. A user has_many wines, and wine belongs_to the user. The user inputs information about wines they like, and stores them for future reference. It was perfect!
+Given that, I knew I only wanted my app to have a has_many/belongs_to relationship, nothing more. Two models, no join table, no problems. That meant that I would have a User model, and something that belongs_to the user. So I thought a wine journal would lend itself particularly well to this. A user `has_many` wines, and wine `belongs_to` the user. The user inputs information about wines they like, and stores them for future reference. It was perfect!
 
 However, I had a hard time getting excited about the idea, despite my commitment to keep it simple. This idea kept popping into my head to allow other users to view every other user's wine entries, and before long I had this concept of a wine-centric social media platform in my head. Once I had named it Vino, there was no turning back.
 
@@ -28,9 +28,9 @@ As a former chef, I'm used to learning from people who have come before me. A ch
 
 ### RELATIONSHIPS
 
-Once the tests were written, I felt more confident about building, because I was used to running tests and debugging. I started by running the model specs, defining my classes, and writing migrations for the User model and Wine model. Once that was done, it was time to run the application controller specs and define my routes. I don't think I mentioned this yet: I built Vino using Sinatra, so I had to not only define my routes, but code the logic each controller action. That's the stuff I love for when programming, so I really enjoyed debugging my way to a working app.
+Once the tests were written, I felt more confident about building, because I was used to running tests and debugging. I started by running the model specs, defining my classes, and writing migrations for the User model and Wine model. Once that was done, it was time to run the application controller specs and define my routes. I don't think I mentioned this yet: I built Vino using Sinatra, so I had to not only define my routes, but code the logic of each controller action. That's the stuff I live for when programming, so I really enjoyed debugging my way to a working app.
 
-Pry was my best friend. I also heavily utilized a gem called Tux, which, when you run `bundle exec tux` in your console, opens up an interactive environment that's almost like the lovechild of Pry and IRB.
+Pry was my best friend. I also heavily utilized a gem called Tux, which, when you run `bundle exec tux` in your console, opens up an interactive environment that's pretty much like the sexy lovechild of Pry and IRB.
 
 Before long, all my tests were passing, and my data was behaving as it should. My app was working!
 
@@ -39,25 +39,26 @@ Unfortunately, it was also ugly as sin.
 
 ### ADVENTURES IN HTML
 
-I wanted Vino to look nice. It was really important to me that, even though I had kept it as basic as I could, that it was something I could be proud of. Something I point to proudly and say, "I did that" without embarrassment. I came pretty damn close to succeeding.
+I wanted Vino to look nice. It was really important to me that, even though I had kept it as basic as I could, that it was something I could be proud of. Something I could point to proudly and say, "I did that" without embarrassment. I came pretty damn close to succeeding.
 
-My design skills are limited, and I still wanted to keep the app simple. So rather than writing all my HTML and CSS from scratch, I decided to Bootstrap it. This was advantageous for several reasons. It meant first of all that I could use a bare-bones Bootstrap template (I didn't use a theme), customize the HTML and write all the CSS myself without necessarily needing to worry about things like clearfix. All the pieces would just fit together nicely, as long as I paid attention to the grid and didn't screw up the size of my rows and columns. It also meant that I could give Vino some nice features using Bootstrap's javascripts that I normally wouldn't try to incorporate myself at this stage.
+My design skills are limited, and I still wanted to keep the app simple. So rather than writing all my HTML and CSS from scratch, I decided to Bootstrap it. This was advantageous for several reasons. It meant first of all that I could use a bare-bones Bootstrap template (I didn't use a theme), customize the HTML and write all the CSS myself without necessarily needing to worry about things like clearfix. All the pieces would just fit together nicely, as long as I paid attention to the grid and didn't screw up the size of my rows and columns. It meant I didn't have to worry about whether or not the app was responsive. It also meant that I could give Vino some nice features using Bootstrap's javascripts that I normally wouldn't try to incorporate myself at this stage in my learning.
 
 To learn how to do this, I followed a tutorial on the W3C's website that walked me through adding BootstrapCDN scripts and building out a basic grid for a social media-style website. I altered the grid somewhat to suit my needs, and started styling. I thought it would be fun to make it look like Facebook, so I wrote the CSS to make it happen, Googling around whenever I ran into an issue.
 
-My first attempt was a miserable failure. Bugs were popping up like crazy, as I tried to do things like create cards for each wine entry, and whenever I fixed one, another one would pop up someplace else. It was like the worst game of Whack-A-Mole I had ever played. Finally, I ran `git checkout`, started a new branch, and began rebuilding the HTML.
-
-When I was as satisfied as I could be with every little detail, I started refactoring the code. When I was building, all the HTML and CSS for each view was in each .erb file. I moved all the CSS to a stylesheet, and as much repeated code as I could to a layout. With a sigh of relief, I arrived at the moment when I couldn't think of anything else I needed to do.
+My first attempt was a miserable failure. Bugs were popping up like crazy as I tried to do things like create cards for each wine entry, and whenever I fixed one bug, another would pop up someplace else. It was like the worst game of Whack-A-Mole I had ever played. Finally, I ran `git checkout`, started a new branch, and began rebuilding the HTML.
 
 `git checkout master`.
 `git merge revised-layout`.
+
+When I was as satisfied as I could be with every little detail, I started refactoring the code. When I was building, all the HTML and CSS for each view was in each .erb file. I moved all the CSS to a stylesheet, and as much repeated code as I could to a layout. With a sigh of relief, I arrived at the moment when I couldn't think of anything else I needed to do. At least for time being.
+
 `git add .`.
 `git commit -m "done."`.
 `git push`.
 
 With a smile, I opened a bottle of wine, poured myself a glass, and sat back ...
 
-... then looked at the label, opened up my new wine form, and put it in my app.
+... then looked at the label, fired up `shotgun`, logged in, and put it in my app.
 
 
 ### NEXT STEPS
