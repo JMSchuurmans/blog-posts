@@ -11,22 +11,21 @@ But before I let my romanticism lead me off topic, there’s something else you 
 
 Quick aside: please bear with me if my examples seem a bit contrived. I'm using simple scenarios to explain error messages, even though the code might be unrealistic.
 
-###WHAT ARE ERRORS?
+### What are errors?
 
 Ruby will throw, or raise, an error when something in your program is not working properly. Error messages are your interpreter telling you that something needs to be fixed. If you don't know what I mean by "interpreter", don't worry so much about it now. It's beyond the scope of this post, but just understand that it has to do with how your code is read and executed in your computer. (If you're dying to know more, Google around, but finish reading this first).
 
 Write this down on a Post-it and stick it next to your computer: _errors are not setbacks, they’re opportunities_. When your program throws an error, it doesn’t mean that you’re a bad programmer. I think that many of us in the beginning stages feel that if we were better at programming we could build an application and see minimal errors. Thinking this way will only lead to misery, so the first thing you need to realize is that errors are normal. Your program won’t be transmitted from your brain to your text editor in flawless form with awe-inspiring functionality. It will start broken, and require you to fix it. This is the fun part about programming, believe it or not. This is where you get to solve problems and gain the satisfaction that comes from that. And that’s what errors are there for. Errors are your friend, not your foe. Listen to them. They want to help you. Frustration is normal, but always remember that running into errors does not mean you’re a bad programmer. Instead, read on, and learn how to use them to your advantage.
 
-###HOW DO I READ AN ERROR MESSAGE?
+### How do I read an error message?
 
 Error messages give you three key pieces of information, the “where”, the “why”, and the “what”.
 
 A typical error message looks like this:
-<pre>
-  <code>
+
+```ruby
 lib/my_file.rb:32::undefined local variable or method `some_variable' for main:Object (NameError)
-  </code>
-</pre>
+```
 
 <code>lib/my_file.rb:32</code> tells you that the error occurred in the `lib` directory, in the file `my_file.rb`, on `line 32` of that file. That's the "where".
 
@@ -38,7 +37,7 @@ The most important piece of advice I can give you is to _always read the whole e
 
 Let's start with this one, and talk about a few other common errors you'll encounter.
 
-###NameError
+### NameError
 
 **What the what?**
 
@@ -99,21 +98,17 @@ Google around and make sure you’re using the right method for your object. In 
 
 Say we have the following method:
 
-<pre>
- <code>
+```ruby
 def upcase_this_string(string)
   puts string.upcase
 end
- </code>
-</pre>
+```
 
 
 If we call <code>upcase_this_string("I love Ruby")</code>, it will output "I LOVE RUBY". But if we call <code>upcase_this_string("I love Ruby", "a lot")</code>, we'll see this:
-<pre>
- <code>
+```ruby
 1:in `upcase_this_string': wrong number of arguments (given 2, expected 1) (ArgumentError)
- </code>
-</pre>
+```
 
 What this is telling you is that you gave two arguments in your method call, but your method was written to only take one argument.
 
@@ -127,20 +122,16 @@ There are a few scenarios that will cause Ruby to throw an ArgumentError, so mak
 **What the what?**
 
 This particular error had me confused for a long time, and I'm sure I'm not alone, so let's dig in. Let's say you're doing some super simple arithmetic:
-<pre>
- <code>
+```ruby
 def add_one_plus_one
   puts 1+1
 end
- </code>
-</pre>
+```
 
 Calling `add_one_plus_one` and running this file will output `2` to your terminal. but what if instead of `puts 1+1`, you had for some reason written `puts "one"+1`? You would see:
-<pre>
- <code>
+```ruby
 errors.rb:2:in `+': no implicit conversion of Integer into String (TypeError)
- </code>
-</pre>
+```
 
 **How do I fix it?**
 
@@ -150,12 +141,11 @@ Basically, all Ruby is telling you here is that when you tried to call `+1`, it 
 
 You've probably heard that Ruby is a pure object-oriented language, and that everything in Ruby is an object. Would it blow your mind if I pointed out that this holds true for your errors as well? Errors are objects, instances of the Exception class. If you don't find this cool yet, just wait. Object-orientation is awesome. Suspend disbelief until you get there, and you'll see what I mean.
 
-###RESOURCES
+###Resources
 
 For more information on the Exception class, and Ruby errors, see [the Ruby docs](https://ruby-doc.org/core-2.2.0/Exception.html)
 
 
-If I've done my job, error messages now seem more understandable, less intimidating, and you now have some idea how to resolve them. If you found this post helpful, please share it with anybody else who might benefit from it. I am always eager to learn and improve, so I would love to hear what people think of this.
-If you feel so inclined, follow me on Twitter. I always love to meet new people in the programming community.
+If I've done my job, error messages now seem more understandable, less intimidating, and you now have some idea how to resolve them.
 
 Happy coding!
